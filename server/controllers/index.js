@@ -81,14 +81,6 @@ const readCat = (req, res) => {
   Cat.findByName(name1, callback);
 };
 
-const readDog = (req, res) => {
-  if(err){
-    return res.json({err});
-  }
-
-  return res.json(readAllDogs);
-}
-
 // function to handle requests to the page1 page
 // controller functions in Express receive the full HTTP request
 // and a pre-filled out response object to send
@@ -153,10 +145,6 @@ const hostPage4 = (req, res) => {
   }
 
   readAllDogs(req, res, callback);
-}
-
-const getAllDogs = (req, res) => {
-  res.json({})
 }
 
 // function to handle a request to set the name
