@@ -273,9 +273,12 @@ const searchDogName = (req, res) => {
 
     const savePromise = lastAddedDog.save();
 
-    savePromise.then(() => res.json({name: lastAddedDog.name, breed: lastAddedDog.breed, age: lastAddedDog.age}));
+    savePromise.then(() => res.json({
+      name: lastAddedDog.name, 
+      breed: lastAddedDog.breed, 
+      age: lastAddedDog.age}));
 
-    savePromise.catch((err) => res.json({err}));
+    savePromise.catch((err2) => res.json({err2}));
 
     return res.json({name: doc.name, breed: doc.breed, age: doc.age});
   });
@@ -330,7 +333,6 @@ module.exports = {
   page3: hostPage3,
   page4: hostPage4,
   readCat,
-  readDog,
   getName,
   setName,
   setDogName,
